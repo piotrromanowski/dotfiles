@@ -1,0 +1,23 @@
+[user]
+  email = piotr.romanowski@vistarmedia.com
+  name = Piotr Romanowski
+[core]
+  editor = nvim
+	excludesfile = /home/promanowski/.gitignore_global
+
+
+[alias]
+  wd = diff --word-diff
+  ca = commit --amend
+  co = checkout
+  pg = push origin HEAD:refs/for/develop
+  pgp = push origin HEAD:refs/for/develop%private
+  pgm = push origin HEAD:refs/for/master
+  #lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative --all
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  s = status
+[push]
+	default = simple
+
+[status]
+  showUntrackedFiles = all
