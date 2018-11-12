@@ -234,3 +234,6 @@ hi SpellBad cterm=underline
 
 " Delete trailing whitespace
 let g:strip_whitespace_on_save = 1
+
+" Preview %s changes as you're making them
+set inccommand=nosplit
