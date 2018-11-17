@@ -237,3 +237,10 @@ let g:strip_whitespace_on_save = 1
 
 " Preview %s changes as you're making them
 set inccommand=nosplit
+
+
+" Preview Files when using :Ag
+command! -bang -nargs=* Ag                                                                                                                                                                                                              
+\ call fzf#vim#ag(<q-args>,                                                                                                                                                                                                           
+\                 <bang>fzf#vim#with_preview('right:50%'),                                                                                                                                                                            
+\                 <bang>0) 
