@@ -66,6 +66,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'nsf/gocode', {'rtp': 'vim/'}
 Plug 'fatih/vim-go'
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -244,3 +245,21 @@ command! -bang -nargs=* Ag
 \ call fzf#vim#ag(<q-args>,                                                                                                                                                                                                           
 \                 <bang>fzf#vim#with_preview('right:50%'),                                                                                                                                                                            
 \                 <bang>0) 
+
+
+" remap resizing split panes
+noremap <C-h> :vertical resize -1<CR>
+noremap <C-l> :vertical resize +1<CR>
+
+" underline the current line that you're at
+set cursorline
+hi clear CursorLine
+hi CursorLine gui=underline cterm=underline
+
+
+" ultisnips
+let g:UltiSnipsExpandTrigger="<c-j>"
+"let g:UltiSnipsJumpForwardTrigger="<c-l>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-h>"
+"let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+let g:UltiSnipsSnippetDirectories = ['/home/promanowski/.config/nvim/UltiSnips']
