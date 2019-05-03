@@ -52,6 +52,7 @@ Plug 'scheakur/vim-scheakur'
 Plug 'chriskempson/base16-vim'
 Plug 'sickill/vim-monokai'
 Plug 'morhetz/gruvbox'
+Plug 'google/vim-colorscheme-primary'
 
 Plug 'derekwyatt/vim-scala'
 Plug 'pangloss/vim-javascript'
@@ -59,6 +60,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'mtscout6/vim-cjsx'
 Plug 'leafgarland/typescript-vim'
 Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'sk1418/Join'
 Plug 'dart-lang/dart-vim-plugin'
 
@@ -222,6 +224,11 @@ map <silent> <C-p> :GF<CR>
 
 set bg=dark
 colorscheme gruvbox
+
+" if filereadable(expand("~/.vimrc_background"))
+"   let base16colorspace=256
+"   source ~/.vimrc_background
+" endif
 
 " Tabs Colors
 :hi TabLineSel ctermfg=White ctermbg=Blue
