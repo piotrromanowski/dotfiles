@@ -208,6 +208,12 @@ au FileType python set indentkeys-=0#
 let g:airline_theme='vice'
 "colorscheme peaksea
 
+" open directory of current file  
+nmap ' :e %:h<CR>                 
+" cd to current open file         
+nmap \ :cd %:p:h<CR>              
+
+" show current buffers
 nmap ; :Buffers<CR>
 map <silent> <C-g> :Gstatus<CR>
 
