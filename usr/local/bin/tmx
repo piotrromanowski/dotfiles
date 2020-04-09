@@ -1,0 +1,13 @@
+#!/bin/zsh
+sessionName="work"
+
+cd $HOME/Development/vistar
+
+tmux new-session -s "$sessionName" -n "vim" -d
+tmux new-window -t "$sessionName:2" -c $HOME/Development/docker-compose -n "docker"
+tmux new-window -t "$sessionName:3" -c $HOME/Development/vistar -n "bash"
+tmux new-window -t "$sessionName:4" -c $HOME/Development/vistar -n "psql"
+tmux new-window -t "$sessionName:5" -c $HOME/Development/vistar -n "vpc"
+
+tmux select-window -t "$sessionName:1"
+tmux attach-session -t "$sessionName"
