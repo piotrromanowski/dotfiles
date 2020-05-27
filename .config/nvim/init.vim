@@ -18,6 +18,15 @@ map <leader>tm :tabmove
 " Map leader c to clear current search
 nnoremap <leader>c :nohl<CR>
 
+" Toggle paste mode
+nmap <silent> <leader>p :set invpaste<CR>:set paste?<CR>
+
+" Toggle case sensitive search
+nmap <silent> <leader>c :set invignorecase<CR>
+
+" Greps the current word under the cursor
+noremap <leader>a :Ag <C-r>=expand('<cword>')<CR><CR>
+
 " http://neovim.io/doc/user/nvim_terminal_emulator.html
 tnoremap jk <C-\><C-n>
 
