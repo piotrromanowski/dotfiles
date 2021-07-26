@@ -49,3 +49,7 @@ map('n', ';', ':Telescope buffers<cr>', {})
 map('i', '<C-space>', 'compe#complete()', { expr = true })
 map('i', '<CR>', 'compe#confirm("<CR>")', { expr = true })
 map('i', '<C-e>', 'compe#close("<C-e>")', { expr = true })
+
+-- remap resizing split panes
+map('n', '<C-h>', '<cmd>vertical resize -1<CR>', {})
+map('n', '<C-l>', '<cmd>vertical resize +1<CR>', {})
