@@ -22,7 +22,6 @@ return packer.startup(
 
     -- deps
     use 'nvim-lua/plenary.nvim'
-
     use 'nvim-lua/popup.nvim'
 
     -- LANGUAGES
@@ -39,30 +38,16 @@ return packer.startup(
     use 'google/vim-jsonnet'
     ---- nginx
     use 'chr4/nginx.vim'
-    ---- nim
-    use 'zah/nim.vim'
     ---- psql
     use 'lifepillar/pgsql.vim'
     ---- proto
     use 'uarun/vim-protobuf'
     ---- Pug
     use 'digitaltoad/vim-pug'
-    ---- purescript
-    use 'purescript-contrib/purescript-vim'
-    ---- reason
-    use 'reasonml-editor/vim-reason-plus'
     ---- sbt
     use 'derekwyatt/vim-sbt'
     ---- xml
     use 'amadeus/vim-xml'
-
-    -- # general
-    -- * for visual selections
-    use 'nelstrom/vim-visual-star-search'
-    -- run tests
-    use 'janko/vim-test'
-    -- shell commands
-    use 'tpope/vim-eunuch'
 
     -- OTHER
 
@@ -79,11 +64,12 @@ return packer.startup(
       'hoob3rt/lualine.nvim',
       config = function()
         require("plugins.lualine")
-      end
+      end,
+      requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
 
     -- line 'em up
-    use 'godlygeek/tabular'
+    --use 'godlygeek/tabular'
 
     use {
       'nvim-telescope/telescope.nvim',
@@ -137,6 +123,19 @@ return packer.startup(
 --
     -- file type icons
     use 'kyazdani42/nvim-web-devicons'
+    use 'ryanoasis/vim-devicons'
+
+    use {
+       "folke/trouble.nvim",
+       requires = "kyazdani42/nvim-web-devicons",
+       config = function()
+         require("trouble").setup {
+           -- your configuration comes here
+           -- or leave it empty to use the default settings
+           -- refer to the configuration section below
+         }
+       end
+     }
 
     -- file tree
     --use 'kyazdani42/nvim-tree.lua'
@@ -165,14 +164,6 @@ return packer.startup(
     -- display function signatures while typing
     use 'ray-x/lsp_signature.nvim'
 
-    -- show pictograms on completion dropdown
---    use {
---      'onsails/lspkind-nvim',
---      config = function()
---        require 'lspkind'.init()
---      end
---    }
---
     -- COLORSCHEMES
     use {
       'folke/tokyonight.nvim',

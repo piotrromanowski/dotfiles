@@ -81,6 +81,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/piotr/.local/share/nvim/site/pack/packer/start/csv.vim"
   },
+  fzf = {
+    loaded = true,
+    path = "/home/piotr/.local/share/nvim/site/pack/packer/start/fzf"
+  },
   ["fzf.vim"] = {
     loaded = true,
     path = "/home/piotr/.local/share/nvim/site/pack/packer/start/fzf.vim"
@@ -93,10 +97,6 @@ _G.packer_plugins = {
   ["gleam.vim"] = {
     loaded = true,
     path = "/home/piotr/.local/share/nvim/site/pack/packer/start/gleam.vim"
-  },
-  ["glow.nvim"] = {
-    loaded = true,
-    path = "/home/piotr/.local/share/nvim/site/pack/packer/start/glow.nvim"
   },
   ["gruvbuddy.nvim"] = {
     loaded = true,
@@ -118,10 +118,6 @@ _G.packer_plugins = {
   ["nginx.vim"] = {
     loaded = true,
     path = "/home/piotr/.local/share/nvim/site/pack/packer/start/nginx.vim"
-  },
-  ["nim.vim"] = {
-    loaded = true,
-    path = "/home/piotr/.local/share/nvim/site/pack/packer/start/nim.vim"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
@@ -176,18 +172,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/piotr/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
-  ["purescript-vim"] = {
-    loaded = true,
-    path = "/home/piotr/.local/share/nvim/site/pack/packer/start/purescript-vim"
-  },
   ["surround.nvim"] = {
     config = { "\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21plugins.surround\frequire\0" },
     loaded = true,
     path = "/home/piotr/.local/share/nvim/site/pack/packer/start/surround.nvim"
-  },
-  tabular = {
-    loaded = true,
-    path = "/home/piotr/.local/share/nvim/site/pack/packer/start/tabular"
   },
   ["telescope.nvim"] = {
     config = { "\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins.telescope\frequire\0" },
@@ -198,6 +186,11 @@ _G.packer_plugins = {
     config = { "\27LJ\2\n%\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\ntheme\frequire\0" },
     loaded = true,
     path = "/home/piotr/.local/share/nvim/site/pack/packer/start/tokyonight.nvim"
+  },
+  ["trouble.nvim"] = {
+    config = { "\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0" },
+    loaded = true,
+    path = "/home/piotr/.local/share/nvim/site/pack/packer/start/trouble.nvim"
   },
   ["vim-better-whitespace"] = {
     loaded = true,
@@ -215,9 +208,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/piotr/.local/share/nvim/site/pack/packer/start/vim-colortuner"
   },
-  ["vim-eunuch"] = {
+  ["vim-devicons"] = {
     loaded = true,
-    path = "/home/piotr/.local/share/nvim/site/pack/packer/start/vim-eunuch"
+    path = "/home/piotr/.local/share/nvim/site/pack/packer/start/vim-devicons"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -239,21 +232,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/piotr/.local/share/nvim/site/pack/packer/start/vim-pug"
   },
-  ["vim-reason-plus"] = {
-    loaded = true,
-    path = "/home/piotr/.local/share/nvim/site/pack/packer/start/vim-reason-plus"
-  },
   ["vim-sbt"] = {
     loaded = true,
     path = "/home/piotr/.local/share/nvim/site/pack/packer/start/vim-sbt"
-  },
-  ["vim-test"] = {
-    loaded = true,
-    path = "/home/piotr/.local/share/nvim/site/pack/packer/start/vim-test"
-  },
-  ["vim-visual-star-search"] = {
-    loaded = true,
-    path = "/home/piotr/.local/share/nvim/site/pack/packer/start/vim-visual-star-search"
   },
   ["vim-xml"] = {
     loaded = true,
@@ -262,42 +243,46 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
--- Config for: surround.nvim
-time([[Config for surround.nvim]], true)
-try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21plugins.surround\frequire\0", "config", "surround.nvim")
-time([[Config for surround.nvim]], false)
 -- Config for: nvim-compe
 time([[Config for nvim-compe]], true)
 try_loadstring("\27LJ\2\n-\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\18plugins.compe\frequire\0", "config", "nvim-compe")
 time([[Config for nvim-compe]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins.telescope\frequire\0", "config", "telescope.nvim")
-time([[Config for telescope.nvim]], false)
--- Config for: lualine.nvim
-time([[Config for lualine.nvim]], true)
-try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20plugins.lualine\frequire\0", "config", "lualine.nvim")
-time([[Config for lualine.nvim]], false)
 -- Config for: tokyonight.nvim
 time([[Config for tokyonight.nvim]], true)
 try_loadstring("\27LJ\2\n%\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\ntheme\frequire\0", "config", "tokyonight.nvim")
 time([[Config for tokyonight.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21plugins.gitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-ts-autotag
-time([[Config for nvim-ts-autotag]], true)
-try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
-time([[Config for nvim-ts-autotag]], false)
--- Config for: nvim-treesitter
-time([[Config for nvim-treesitter]], true)
-try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins.treesitter\frequire\0", "config", "nvim-treesitter")
-time([[Config for nvim-treesitter]], false)
 -- Config for: nvim-lspconfig
 time([[Config for nvim-lspconfig]], true)
 try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins.lspconfig\frequire\0", "config", "nvim-lspconfig")
 time([[Config for nvim-lspconfig]], false)
+-- Config for: trouble.nvim
+time([[Config for trouble.nvim]], true)
+try_loadstring("\27LJ\2\n9\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\ftrouble\frequire\0", "config", "trouble.nvim")
+time([[Config for trouble.nvim]], false)
+-- Config for: nvim-treesitter
+time([[Config for nvim-treesitter]], true)
+try_loadstring("\27LJ\2\n2\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\23plugins.treesitter\frequire\0", "config", "nvim-treesitter")
+time([[Config for nvim-treesitter]], false)
+-- Config for: lualine.nvim
+time([[Config for lualine.nvim]], true)
+try_loadstring("\27LJ\2\n/\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\20plugins.lualine\frequire\0", "config", "lualine.nvim")
+time([[Config for lualine.nvim]], false)
+-- Config for: nvim-ts-autotag
+time([[Config for nvim-ts-autotag]], true)
+try_loadstring("\27LJ\2\n=\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\20nvim-ts-autotag\frequire\0", "config", "nvim-ts-autotag")
+time([[Config for nvim-ts-autotag]], false)
+-- Config for: surround.nvim
+time([[Config for surround.nvim]], true)
+try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21plugins.surround\frequire\0", "config", "surround.nvim")
+time([[Config for surround.nvim]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\2\n1\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\22plugins.telescope\frequire\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\n0\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\21plugins.gitsigns\frequire\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
