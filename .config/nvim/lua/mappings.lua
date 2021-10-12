@@ -14,8 +14,13 @@ map('n', '<leader>tc', ':tabclose<cr>')
 map('n', '<leader>tm', ':tabmove')
 
 map('n', '<leader>v', ':vnew<cr>')
+--XXXX
 map("i", "jk", "<esc>", {})
+--map("v", "jk", "<esc>", {})
+--XXXXmap("t", "jk", "<esc>", {})
+--XXXX
 map('n', 'K', "<Cmd>lua vim.lsp.buf.hover()<cr>")
+--XXmap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {})
 
 -- lsp setup
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {})
@@ -46,9 +51,9 @@ map('n', ';', ':Telescope buffers<cr>', {})
 
 
 -- compe
-map('i', '<C-space>', 'compe#complete()', { expr = true })
-map('i', '<CR>', 'compe#confirm("<CR>")', { expr = true })
-map('i', '<C-e>', 'compe#close("<C-e>")', { expr = true })
+--map('i', '<C-space>', 'compe#complete()', { expr = true })
+--map('i', '<CR>', 'compe#confirm("<CR>")', { expr = true })
+--map('i', '<C-e>', 'compe#close("<C-e>")', { expr = true })
 
 -- remap resizing split panes
 map('n', '<C-h>', '<cmd>vertical resize -1<CR>', {})

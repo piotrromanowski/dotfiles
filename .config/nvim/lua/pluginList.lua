@@ -51,6 +51,8 @@ return packer.startup(
 
     -- OTHER
 
+    use 'tpope/vim-surround'
+
     -- displays symbols on site for add/delete/change
     use {
       'lewis6991/gitsigns.nvim',
@@ -105,10 +107,24 @@ return packer.startup(
     --    require('plugins.lspsaga')
     --  end
     --}
+
+    --use {
+    --  'hrsh7th/nvim-compe',
+    --  config = function()
+    --    require("plugins.compe")
+    --  end
+    --}
+
+    --use 'L3MON4D3/LuaSnip'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-nvim-lua'
+    use 'saadparwaiz1/cmp_luasnip'
     use {
-      'hrsh7th/nvim-compe',
+      'hrsh7th/nvim-cmp',
       config = function()
-        require("plugins.compe")
+        require("plugins.cmp")
       end
     }
 

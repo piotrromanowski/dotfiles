@@ -65,8 +65,12 @@ local languages = {
     typescriptreact = {prettier}
 }
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
 nvim_lsp.efm.setup({
     init_options = {documentFormatting = true},
     filetypes = vim.tbl_keys(languages),
-    settings = {rootMarkers = {".git/"}, languages = languages}
+    settings = {rootMarkers = {".git/"}, languages = languages},
+    capabilities = updated_capabilities,
 })
