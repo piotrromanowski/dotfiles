@@ -97,6 +97,10 @@ source $ZSH/oh-my-zsh.sh
 # Set keyboard repeat rate
 xset r rate 250 60
 
+source ~/.bash_aliases
+
+export AWS_SDK_LOAD_CONFIG=true
+
 # - base16 shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
