@@ -38,7 +38,7 @@ gitsigns.setup {
     ['o ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>',
     ['x ih'] = ':<C-U>lua require"gitsigns.actions".select_hunk()<CR>'
   },
-  watch_index = {
+  watch_gitdir = {
     interval = 1000,
     follow_files = true
   },
@@ -64,7 +64,7 @@ gitsigns.setup {
     row = 0,
     col = 1
   },
-  use_internal_diff = true,  -- If vim.diff or luajit is present
+  --use_internal_diff = true,  -- If vim.diff or luajit is present
   yadm = {
     enable = false
   },
