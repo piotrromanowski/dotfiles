@@ -13,4 +13,6 @@ vim.cmd [[
   highlight GitSignsChangeLn guifg=black
   highlight GitSignsDeleteLn guibg=#FFAAAA guifg=black
   highlight GitSignsDeleteLn guifg=black
+
+  autocmd BufWritePre *.go lua vim.lsp.buf.formatting_sync(nil, 1000)
 ]]

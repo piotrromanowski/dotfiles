@@ -6,7 +6,7 @@ local function map(mode, lhs, rhs, opts)
     vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-map('n', '<leader>gb', ':Gblame<cr>')
+map('n', '<leader>gb', ':Git blame<cr>')
 
 map('n', '<leader>tn', ':tabnew<cr>')
 map('n', '<leader>to', ':tabonly<cr>')
@@ -16,24 +16,7 @@ map('n', '<leader>tm', ':tabmove')
 map('n', '<leader>v', ':vnew<cr>')
 --XXXX
 map("i", "jk", "<esc>", {})
---map("v", "jk", "<esc>", {})
---XXXXmap("t", "jk", "<esc>", {})
---XXXX
-map('n', 'K', "<Cmd>lua vim.lsp.buf.hover()<cr>")
---XXmap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', {})
 
--- lsp setup
-map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', {})
-map('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', {})
-map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', {})
-map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', {})
---map('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', {})
-map('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting_seq_sync<CR>', {})
-
---XX--XXmap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', {})  -- for some reason this breaks visual selections and makes them overshoot
-map('n', '<C-n>', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', {})
---"nnoremap <silent> <C-p> <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
-----" nvim lsp saga
 ----"nnoremap <silent> K <cmd>lua require('lspsaga.hover').render_hover_doc()<CR>
 map('n', '<leader>ca', "<cmd>lua require('lspsaga.codeaction').code_action()<CR>", {})
 

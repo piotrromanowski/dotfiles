@@ -51,6 +51,8 @@ return packer.startup(
 
     -- OTHER
 
+    use "McAuleyPenney/tidy.nvim"
+
     use 'tpope/vim-surround'
 
     -- displays symbols on site for add/delete/change
@@ -102,10 +104,14 @@ return packer.startup(
     -- some `lsp` configs
     use {
       'neovim/nvim-lspconfig',
+      requires = {'williamboman/nvim-lsp-installer'},
       config = function()
         require('plugins.lspconfig')
       end
     }
+
+    use 'williamboman/nvim-lsp-installer'
+
     --use {
     --  'glepnir/lspsaga.nvim',
     --  config = function()
@@ -181,6 +187,8 @@ return packer.startup(
         require('nvim-ts-autotag').setup()
       end
     }
+
+    use 'voldikss/vim-floaterm'
 
     -- display function signatures while typing
     use 'ray-x/lsp_signature.nvim'

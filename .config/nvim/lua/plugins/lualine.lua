@@ -10,7 +10,7 @@ lualine.setup({
   sections = {
     lualine_b = {
       { 'branch' },
-      { 'diagnostics', sources = {'nvim_lsp'} },
+      {'diagnostics', sources = {'nvim_diagnostic'}}
     },
     lualine_c = {
       { 'filename', { path = 1 }},

@@ -1,6 +1,6 @@
 local nvim_lsp = require('lspconfig')
 
-vim.lsp.set_log_level("debug")
+-- vim.lsp.set_log_level("debug")
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -14,9 +14,9 @@ local on_attach = function(client, bufnr)
   local opts = { noremap=true, silent=true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
+  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
@@ -68,9 +68,12 @@ local languages = {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
-nvim_lsp.efm.setup({
-    init_options = {documentFormatting = true},
-    filetypes = vim.tbl_keys(languages),
-    settings = {rootMarkers = {".git/"}, languages = languages},
-    capabilities = updated_capabilities,
-})
+--nvim_lsp.efm.setup({
+--    init_options = {documentFormatting = true},
+--    filetypes = vim.tbl_keys(languages),
+--    settings = {
+--      rootMarkers = {".git/"},
+--      languages = languages
+--    },
+--    capabilities = capabilities,
+--})
