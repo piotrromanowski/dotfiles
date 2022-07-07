@@ -36,29 +36,46 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { "pyright", "rust_analyzer", "tsserver", "gopls", "bashls" }
+local servers = { "jsonnet_ls", "pyright", "rust_analyzer", "tsserver", "gopls", "bashls" }
+
+local serverFileTypes = {
+  jsonnet_ls = { 'jsonnet', 'libsonnet' },
+  pyright = { 'python' },
+  rust_analyzer = { 'rust' },
+  tsserver = {
+      'javascript',
+      'javascriptreact',
+      'javascript.jsx',
+      'typescript',
+      'typescriptreact',
+      'typescript.tsx',
+  },
+  gopls = { 'go', 'gomod', 'gotmpl' },
+  bashls = { 'sh' },
+}
+
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
+    filetypes = serverFileTypes[lsp],
     flags = {
       debounce_text_changes = 150,
     }
   }
 end
 
-
 local go = {formatCommand = "gofmt", formatStdin = true}
 local python = {formatCommand = "yapf --quiet", formatStdin = true}
 local prettier = {
-    formatCommand = "prettier --stdin-filepath ${INPUT}",
+    formatCommand = "/home/promanowski/.nvm/versions/node/v12.22.7/bin/prettier --stdin-filepath ${INPUT}",
     formatStdin = true
 }
 local lua = {formatCommand = "lua-format -i", formatStdin = true}
 
 local languages = {
-    go = {go},
-    lua = {lua},
-    python = {python},
+    --go = {go},
+    --lua = {lua},
+    --python = {python},
     javascript = {prettier},
     javascriptreact = {prettier},
     typescript = {prettier},
@@ -68,12 +85,12 @@ local languages = {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
---nvim_lsp.efm.setup({
---    init_options = {documentFormatting = true},
---    filetypes = vim.tbl_keys(languages),
---    settings = {
---      rootMarkers = {".git/"},
---      languages = languages
---    },
---    capabilities = capabilities,
---})
+nvim_lsp.efm.setup({
+    init_options = {documentFormatting = true},
+    filetypes = vim.tbl_keys(languages),
+    settings = {
+      rootMarkers = {".git/"},
+      languages = languages
+    },
+    capabilities = capabilities,
+})
