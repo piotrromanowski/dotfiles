@@ -22,6 +22,9 @@ in {
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    awscli
+    bazelisk
+    tailscale
     neovim
     silver-searcher
     gcc
