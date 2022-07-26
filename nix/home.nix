@@ -26,7 +26,6 @@ in {
     silver-searcher
     gcc
     htop
-    zsh
     fzf
     jq
     tree
@@ -35,6 +34,7 @@ in {
     go
     gopls
     nodePackages.pyright
+    zsh-autosuggestions
   ];
 
   home.sessionVariables = {
@@ -77,29 +77,49 @@ in {
     #shortcut = "l";
   };
 
-  #programs.neovim = {
-  #  enable = true;
-  #  viAlias = true;
-  #  vimAlias = true;
-  #  #package = pkgs.neovim-nightly;
-
-  #  extraPackages = with pkgs; [
-
-  #    tree-sitter
-  #  ];
-
-  #  plugins = with pkgs.vimPlugins; [
-
-	#    vim-nix
-
-  #  ];
-
-  #  #extraConfig = (import ./vim-config.nix) { inherit sources; };
-  #};
-
   programs.kitty = {
     enable = true;
     #extraConfig = builtins.readFile ./kitty;
+    settings = {
+      shell = "zsh";
+    };
+  };
+
+  programs.zsh = {
+    enable = true;
+
+    history = {
+      expireDuplicatesFirst = true;
+      save = 100000000;
+      size = 1000000000;
+    };
+
+    plugins = with pkgs; [
+      {
+        # will source zsh-autosuggestions.plugin.zsh
+        name = "zsh-autosuggestions";
+        src = pkgs.fetchFromGitHub {
+          owner = "zsh-users";
+          repo = "zsh-autosuggestions";
+          rev = "v0.4.0";
+          sha256 = "0z6i9wjjklb4lvr7zjhbphibsyx51psv50gm07mbb0kj9058j6kc";
+        };
+      }
+    ];
+
+    oh-my-zsh = {
+      enable = true;
+
+      theme = "af-magic";
+
+      plugins = [
+          "command-not-found"
+          "fzf"
+          "git"
+          "history"
+          "sudo"
+      ];
+    };
   };
 
   xdg.configFile.nvim = {
@@ -108,6 +128,11 @@ in {
   };
 
   xdg.configFile.i3 = {
+    source = ../.config/i3;
+    recursive = true;
+  };
+
+  xdg.configFile.kitty = {
     source = ../.config/i3;
     recursive = true;
   };
