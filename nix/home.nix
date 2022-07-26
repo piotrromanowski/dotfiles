@@ -23,6 +23,7 @@ in {
 
   home.packages = with pkgs; [
     neovim
+    silver-searcher
     gcc
     htop
     zsh
@@ -96,13 +97,18 @@ in {
   #  #extraConfig = (import ./vim-config.nix) { inherit sources; };
   #};
 
-  #programs.kitty = {
-  #  enable = true;
-  #  extraConfig = builtins.readFile ./kitty;
-  #};
+  programs.kitty = {
+    enable = true;
+    #extraConfig = builtins.readFile ./kitty;
+  };
 
   xdg.configFile.nvim = {
     source = ../.config/nvim;
+    recursive = true;
+  };
+
+  xdg.configFile.i3 = {
+    source = ../.config/i3;
     recursive = true;
   };
 }

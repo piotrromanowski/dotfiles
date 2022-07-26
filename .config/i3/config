@@ -21,7 +21,7 @@ font pango:Monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec kitty
 
 # start dmenu
 bindsym $mod+d exec i3-dmenu-desktop
@@ -197,7 +197,7 @@ bar {
 # set background
 # use the same background as slim (login manager)
 # this file is an alias to something in /home/jessie/Pictures
-exec --no-startup-id feh --bg-fill ${HOME}/Pictures/central-park2.jpg
+#exec --no-startup-id feh --bg-fill ${HOME}/Pictures/central-park2.jpg
 
 # run the merge for good colors
 exec xrdb -merge $HOME/.Xresources
@@ -205,7 +205,7 @@ exec xrdb -merge $HOME/.Xdefaults
 
 for_window [class="^.*"] border pixel 2
 
-gaps inner 8
-gaps outer 0
+#gaps inner 8
+#gaps outer 0
 
-exec --no-startup-id feh --randomize --bg-fill ~/Pictures/*
+#exec --no-startup-id feh --randomize --bg-fill ~/Pictures/*

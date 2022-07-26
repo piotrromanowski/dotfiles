@@ -61,7 +61,7 @@
       };
     };
   };
-  
+  services.xserver.windowManager.i3.package = pkgs.i3-gaps;
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
