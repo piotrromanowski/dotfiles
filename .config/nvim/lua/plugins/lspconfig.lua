@@ -78,8 +78,8 @@ local languages = {
     --python = {python},
     javascript = {prettier},
     javascriptreact = {prettier},
-    typescript = {prettier},
-    typescriptreact = {prettier}
+    --typescript = {prettier},
+    --typescriptreact = {prettier}
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

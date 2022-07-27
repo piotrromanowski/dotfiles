@@ -40,7 +40,9 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.piotr = {
-                imports = [./home.nix ];
+                imports = [
+                  ./home.nix
+                ];
               };
             }
           ];

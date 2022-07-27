@@ -1,8 +1,12 @@
 { config, pkgs, lib, ... }:
 
-let
+{
+  nixpkgs.config.allowUnfree = true;
 
-in {
+  imports = [
+    ./efm
+  ];
+
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   home.username = "piotr";
@@ -34,6 +38,8 @@ in {
     jq
     neovim
     nodePackages.pyright
+    nodePackages.typescript
+    nodePackages.typescript-language-server
     silver-searcher
     tailscale
     tmux
