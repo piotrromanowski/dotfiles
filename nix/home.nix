@@ -56,11 +56,6 @@ in {
     '';
   };
 
-  #home.file.".config/nvim" = {
-  #  source = ../.config/nvim;
-  #  recursive = true;
-  #};
-
   programs.git = {
     enable = true;
     userName = "Piotr Romanowski";
@@ -69,6 +64,10 @@ in {
       lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
       root = "rev-parse --show-toplevel";
       ca = "commit amend";
+      co = "checkout";
+      pg = "push origin HEAD:refs/for/develop";
+      pgp = "push origin HEAD:refs/for/develop%private";
+      pgm = "push origin HEAD:refs/for/master";
     };
     extraConfig = {
       color.ui = true;
@@ -90,6 +89,9 @@ in {
       font_size 11.0
       shell zsh
     '';
+    # themes. see $ kitty +kitten themes
+    # "Afterglow" "AquariumDark" "Ayu Mirage" "citylights" "Dark One Nuanced" "Doom Vibrant"
+    theme = "Dracula";
   };
 
   programs.zsh = {
