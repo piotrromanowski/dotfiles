@@ -34,31 +34,18 @@
       nixosConfigurations = {
         piotr = lib.nixosSystem {
           inherit system;
-          modules = [ 
+          modules = [
             ./configuration.nix
-	    home-manager.nixosModules.home-manager {
-		home-manager.useGlobalPkgs = true;
-		home-manager.useUserPackages = true;
-		home-manager.users.piotr = {
-		  imports = [./home.nix ];
-		};
+            home-manager.nixosModules.home-manager {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.piotr = {
+                imports = [./home.nix ];
+              };
             }
           ];
         };
       };
-    #  hmConfig = {
-    #    piotr = home-manager.lib.homeManagerConfiguration {
-    #      inherit system pkgs;
-    #      username = "piotr";
-    #      homeDirectory = "/home/piotr";
-    #      stateVersion = "22.05";
-    #      configuration = {
-    #        imports = [
-    #            ./home.nix
-    #        ];
-    #      };
-    #  };
-    #};
-};
+    };
 }
 

@@ -22,6 +22,8 @@
   # Set your time zone.
   time.timeZone = "America/New_York";
 
+  virtualisation.docker.enable = true;
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -83,7 +85,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.piotr = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
     initialPassword = "password";
     packages = with pkgs; [
       firefox

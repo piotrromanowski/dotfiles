@@ -24,6 +24,7 @@ in {
   home.packages = with pkgs; [
     awscli
     bazelisk
+    docker
     tailscale
     neovim
     silver-searcher
