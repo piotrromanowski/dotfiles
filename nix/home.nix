@@ -25,19 +25,20 @@ in {
     awscli
     bazelisk
     docker
-    tailscale
-    neovim
-    silver-searcher
-    gcc
-    htop
+    fd
     fzf
-    jq
-    tree
-    tmux
-    watch
+    gcc
     go
     gopls
+    htop
+    jq
+    neovim
     nodePackages.pyright
+    silver-searcher
+    tailscale
+    tmux
+    tree
+    watch
     zsh-autosuggestions
   ];
 
@@ -67,6 +68,7 @@ in {
     aliases = {
       lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(r) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative";
       root = "rev-parse --show-toplevel";
+      ca = "commit amend";
     };
     extraConfig = {
       color.ui = true;
@@ -83,10 +85,11 @@ in {
 
   programs.kitty = {
     enable = true;
-    #extraConfig = builtins.readFile ./kitty;
-    settings = {
-      shell = "zsh";
-    };
+    extraConfig = ''
+      font_family JetBrains Mono
+      font_size 11.0
+      shell zsh
+    '';
   };
 
   programs.zsh = {
@@ -113,8 +116,7 @@ in {
 
     oh-my-zsh = {
       enable = true;
-
-      theme = "af-magic";
+      theme  = "af-magic";
 
       plugins = [
           "command-not-found"
@@ -132,11 +134,6 @@ in {
   };
 
   xdg.configFile.i3 = {
-    source = ../.config/i3;
-    recursive = true;
-  };
-
-  xdg.configFile.kitty = {
     source = ../.config/i3;
     recursive = true;
   };

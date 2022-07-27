@@ -22,6 +22,16 @@
   # Set your time zone.
   time.timeZone = "America/New_York";
 
+  environment.etc."config/polybar" = {
+    text = ''
+      [bar/example]
+      width = 100%
+      height = 27
+      radius = 6.0
+      fixed-center = false 
+    '';
+  };
+
   virtualisation.docker.enable = true;
 
   # Configure network proxy if necessary
@@ -55,15 +65,16 @@
       windowManager.bspwm.enable = true;
       windowManager.i3 = {
         enable = true;
+        package = pkgs.i3-gaps;
         extraPackages = with pkgs; [
           dmenu
           i3status
           i3lock
+          polybar
         ];
       };
     };
   };
-  services.xserver.windowManager.i3.package = pkgs.i3-gaps;
 
   # Configure keymap in X11
   # services.xserver.layout = "us";
@@ -92,6 +103,16 @@
       vim
       git
       wget
+    ];
+  };
+
+  fonts = {
+    fontDir.enable = true;
+
+    fonts = [
+      pkgs.fira-code
+      pkgs.jetbrains-mono
+      pkgs.source-code-pro
     ];
   };
 
