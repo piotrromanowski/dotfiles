@@ -1,5 +1,4 @@
 local nvim_lsp = require('lspconfig')
-
 -- vim.lsp.set_log_level("debug")
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -63,6 +62,20 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
+
+nvim_lsp["tsserver"].setup({
+    on_attach = on_attach,
+    filetypes = serverFileTypes["tsserver"],
+    flags = {
+      debounce_text_changes = 150,
+    },
+    cmd = {
+      "typescript-language-server",
+      "--stdio",
+      "--tsserver-path",
+      "/nix/store/lgcap3wqz0zbwgdzhlfclni69w0jb9rj-typescript-4.6.4/lib/node_modules/typescript/lib/"
+    }
+})
 
 local go = {formatCommand = "gofmt", formatStdin = true}
 local python = {formatCommand = "yapf --quiet", formatStdin = true}
