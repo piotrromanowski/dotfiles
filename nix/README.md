@@ -21,3 +21,18 @@ typescript lib folder.
 
 
 prettier "formatCommand" needs to be installed and updated in lspconfig.lua
+
+
+#### Search for a specific version of a package
+
+https://lazamar.co.uk/nix-versions/?channel=nixpkgs-unstable&package=bazel
+
+
+### TODO
+
+- Bazel
+- Docker version
+- Docker-compose
+- Prettier (maybe just use prettier from repo)
+- Pyfmt (maybe just use pyfmt from repo)
+- replace references to dick "by-id" with "by-label" in config

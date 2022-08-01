@@ -28,7 +28,7 @@
       width = 100%
       height = 27
       radius = 6.0
-      fixed-center = false 
+      fixed-center = false
     '';
   };
 

@@ -1,5 +1,8 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, nodejs, ... }:
 
+let
+  #customNodePackages = pkgs.callPackage ./npm {};
+in
 {
   nixpkgs.config.allowUnfree = true;
 
@@ -26,6 +29,7 @@
   programs.home-manager.enable = true;
 
   home.packages = with pkgs; [
+    #customNodePackages.prettier
     awscli
     bazelisk
     docker
@@ -37,9 +41,11 @@
     htop
     jq
     neovim
+    nodePackages.prettier
     nodePackages.pyright
     nodePackages.typescript
     nodePackages.typescript-language-server
+    nodePackages.node2nix
     silver-searcher
     tailscale
     tmux
@@ -60,6 +66,10 @@
     ".config/alacritty/alacritty.yml".text = ''
       {"font":{"bold":{"style":"Bold"}}}
     '';
+  };
+
+  home.file = {
+    ".tmux.conf".text = builtins.readFile ../.tmux.conf;
   };
 
   #home.file = {
@@ -89,12 +99,6 @@
       github.user = "piotrromanowski";
       init.defaultBranch = "main";
     };
-  };
-
-  programs.tmux = {
-    enable = true;
-    terminal = "xterm-256color";
-    #shortcut = "l";
   };
 
   programs.kitty = {

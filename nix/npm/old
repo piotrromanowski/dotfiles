@@ -1,0 +1,9 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "A Vue.js project",
+  "main": "src/main.js",
+  "dependencies": {
+    "prettier": "2.6.2"
+  }
+}
