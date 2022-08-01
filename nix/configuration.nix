@@ -57,9 +57,9 @@
     xserver = {
       enable = true;
       displayManager = {
-	lightdm.enable = true;
+	      lightdm.enable = true;
         #defaultSession = "xfce+bspwm"; # can try xfce or xfce+bspwm
-        defaultSession = "xfce+i3"; # can try xfce or xfce+bspwm
+        defaultSession = "none+i3"; # can try xfce or xfce+bspwm
       };
       desktopManager.xfce.enable = true;
       windowManager.bspwm.enable = true;

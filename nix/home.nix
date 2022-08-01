@@ -30,6 +30,7 @@ in
 
   home.packages = with pkgs; [
     #customNodePackages.prettier
+    powerline-fonts
     awscli
     bazelisk
     docker
@@ -145,6 +146,7 @@ in
           "git"
           "history"
           "sudo"
+          "tmux"
       ];
     };
   };

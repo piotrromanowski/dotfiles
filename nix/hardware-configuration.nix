@@ -19,12 +19,12 @@
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/FA73-7B14";
+    { device = "/dev/disk/by-label/boot";
       fsType = "vfat";
     };
 
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/015000ff-d143-458e-86c2-69304156f018"; }
+    [ { device = "/dev/disk/by-label/swap"; }
     ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
