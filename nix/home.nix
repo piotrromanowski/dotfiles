@@ -1,6 +1,7 @@
 { config, pkgs, lib, nodejs, ... }:
 
 let
+  launchPolybar = pkgs.writeScriptBin "launchPolybar" (builtins.readFile ../polybar/launch_polybar.sh);
   #customNodePackages = pkgs.callPackage ./npm {};
 in
 {
@@ -30,6 +31,7 @@ in
 
   home.packages = with pkgs; [
     #customNodePackages.prettier
+    launchPolybar
     powerline-fonts
     awscli
     bazelisk
@@ -61,6 +63,14 @@ in
     LC_ALL = "en_US.UTF-8";
     EDITOR = "nvim";
     PAGER = "less -FirSwX";
+  };
+
+  home.file = {
+    ".config/polybar/config.ini".text = builtins.readFile ../polybar/config.ini;
+  };
+
+  home.file = {
+    ".config/polybar/launch_polybar.sh".text = builtins.readFile ../polybar/launch_polybar.sh;
   };
 
   home.file = {

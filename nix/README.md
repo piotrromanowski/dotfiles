@@ -27,13 +27,3 @@ prettier "formatCommand" needs to be installed and updated in lspconfig.lua
 
 https://lazamar.co.uk/nix-versions/?channel=nixpkgs-unstable&package=bazel
 
-
-### TODO
-
-[ ] - Bazel
-[ ] - Docker version
-[ ] - Docker-compose
-[~] - Prettier (maybe just use prettier from repo)
-[ ] - Pyfmt (maybe just use pyfmt from repo)
-[X] - replace references to disk "by-id" with "by-label" in config
-[ ] - remove hardcoding in tmux config "default-shell"

@@ -57,12 +57,19 @@
     xserver = {
       enable = true;
       displayManager = {
-	      lightdm.enable = true;
+	      #lightdm.enable = true;
         #defaultSession = "xfce+bspwm"; # can try xfce or xfce+bspwm
-        defaultSession = "none+i3"; # can try xfce or xfce+bspwm
+        #defaultSession = "none+i3"; # can try xfce or xfce+bspwm
+        defaultSession = "xfce+i3"; # can try xfce or xfce+bspwm
       };
-      desktopManager.xfce.enable = true;
-      windowManager.bspwm.enable = true;
+      #desktopManager.xfce.enable = true;
+      desktopManager = {
+        xfce = {
+          enable = true;
+          noDesktop = true;
+          enableXfwm = false;
+        };
+      };
       windowManager.i3 = {
         enable = true;
         package = pkgs.i3-gaps;
@@ -100,6 +107,7 @@
     initialPassword = "password";
     packages = with pkgs; [
       firefox
+      google-chrome
       vim
       git
       wget
@@ -159,4 +167,5 @@
     package = pkgs.nixFlakes;
     extraOptions = "experimental-features = nix-command flakes";
   };
+  nixpkgs.config.allowUnfree = true;
 }
