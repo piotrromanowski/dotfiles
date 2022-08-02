@@ -209,6 +209,6 @@ for_window [class="^.*"] border pixel 2
 gaps inner 4
 gaps outer 0
 
-#exec --no-startup-id feh --randomize --bg-fill ~/Pictures/*
+exec --no-startup-id feh --randomize --bg-fill ~/Pictures/*
 # If not using nix, invoke the ../polybar/launch_polybar.sh script
 exec_always --no-startup-id launchPolybar

@@ -36,6 +36,7 @@ in
     awscli
     bazelisk
     docker
+    feh
     fd
     fzf
     gcc
