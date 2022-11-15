@@ -65,7 +65,8 @@ vim.g.python_recommended_style = 0
 vim.g.ackprg = "rg --vimgrep --no-heading --smart-case"
 vim.cmd[[cnoreabbrev rg Ack]]
 
-vim.g.mix_format_on_save = 1
+--TODO: ?
+--vim.g.mix_format_on_save = 1
 
 vim.g.node_client_debug = 1
 

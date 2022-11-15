@@ -17,8 +17,12 @@ return packer.startup(
       event = "VimEnter"
     }
 
-    use { "junegunn/fzf", run = "./install --all" }
-    use { "junegunn/fzf.vim" }
+    --use 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    --use { "junegunn/fzf", run = "./install --all" }
+    --use { "junegunn/fzf.vim" }
+
+    use("/home/promanowski/.fzf")
+    use("junegunn/fzf.vim")
 
     -- deps
     use 'nvim-lua/plenary.nvim'
@@ -81,7 +85,8 @@ return packer.startup(
       requires = {
         {'nvim-lua/popup.nvim'},
         {'nvim-lua/plenary.nvim'},
-        {'nvim-telescope/telescope-fzy-native.nvim'}
+        {'nvim-telescope/telescope-fzy-native.nvim'},
+        { "nvim-telescope/telescope-live-grep-args.nvim" },
       },
       config = function()
         require("plugins.telescope")
@@ -93,16 +98,19 @@ return packer.startup(
     -- git good
     use 'tpope/vim-fugitive'
     -- (--'happy times'--)
-    use {
-      'blackCauldron7/surround.nvim',
-      config = function()
-        require("plugins.surround")
-      end
-    }
+    --use {
+    --  'blackCauldron7/surround.nvim',
+    --  config = function()
+    --    require("plugins.surround")
+    --  end
+    --}
     -- adjust color scheme
     use 'zefei/vim-colortuner'
 
     -- some `lsp` configs
+
+    use 'jose-elias-alvarez/null-ls.nvim'
+
     use {
       'neovim/nvim-lspconfig',
       requires = {'williamboman/nvim-lsp-installer'},
@@ -175,6 +183,7 @@ return packer.startup(
       end
     }
     --use 'nvim-treesitter/playground'
+    use 'nvim-treesitter/nvim-treesitter-context'
 
     -- autocompletes html tags
     use {

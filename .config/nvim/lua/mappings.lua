@@ -26,7 +26,8 @@ map('n', '<C-n>', ':NERDTreeToggle<cr>', {})
 
 
 -- Telescope
-map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {})
+--map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', {})
+map("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 map('n', '<leader>a', '<cmd>lua require(\'telescope.builtin\').grep_string({search = vim.fn.expand("<cword>")})<cr>', {})
 map('n', '<C-p>', "<cmd>Telescope git_files<cr>", {})
 --map('n', ';', ':Buffers<cr>', {})

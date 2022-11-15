@@ -37,5 +37,6 @@ return packer.init({
   },
   git = {
     clone_timeout = 600,
-  }
+  },
+  log = { level = 'trace' },
 })
