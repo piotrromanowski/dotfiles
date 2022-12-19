@@ -13,6 +13,10 @@ map('n', '<leader>to', ':tabonly<cr>')
 map('n', '<leader>tc', ':tabclose<cr>')
 map('n', '<leader>tm', ':tabmove')
 
+-- Copy current file path
+-- nnoremap <Leader>c :let @+=expand('%:p')<CR>
+map('n', '<leader>cp', ":let @+=expand('%:p')<CR>", {})
+
 map('n', '<leader>v', ':vnew<cr>')
 --XXXX
 map("i", "jk", "<esc>", {})
