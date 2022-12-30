@@ -13,10 +13,6 @@ map('n', '<leader>to', ':tabonly<cr>')
 map('n', '<leader>tc', ':tabclose<cr>')
 map('n', '<leader>tm', ':tabmove')
 
--- Copy current file path
--- nnoremap <Leader>c :let @+=expand('%:p')<CR>
-map('n', '<leader>cp', ":let @+=expand('%:p')<CR>", {})
-
 map('n', '<leader>v', ':vnew<cr>')
 --XXXX
 map("i", "jk", "<esc>", {})
@@ -46,3 +42,14 @@ map('n', ';', ':Telescope buffers<cr>', {})
 -- remap resizing split panes
 map('n', '<C-h>', '<cmd>vertical resize -1<CR>', {})
 map('n', '<C-l>', '<cmd>vertical resize +1<CR>', {})
+
+--vim.cmd [[
+--command! -bang -nargs=* GitGrep
+--  \ call fzf#vim#ag(<q-args>,
+--  \  fzf#vim#with_preview({
+--  \    'options': '--no-hscroll --delimiter : --nth 4..',
+--  \    'dir': systemlist('git rev-parse --show-toplevel')[0]},
+--  \    'right:50%'
+--  \  ),
+--  \  <bang>0)
+--]]

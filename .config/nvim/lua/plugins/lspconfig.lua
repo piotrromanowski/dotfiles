@@ -115,6 +115,7 @@ local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 null_ls.setup({
     sources = {
         null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.rustfmt,
         --require("null-ls").builtins.formatting.stylua,
         --require("null-ls").builtins.completion.spell,
     },

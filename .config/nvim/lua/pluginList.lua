@@ -21,8 +21,10 @@ return packer.startup(
     --use { "junegunn/fzf", run = "./install --all" }
     --use { "junegunn/fzf.vim" }
 
-    use("/home/promanowski/.fzf")
-    use("junegunn/fzf.vim")
+    --use("/home/promanowski/.fzf")
+    --use("junegunn/fzf.vim")
+    use { 'junegunn/fzf', run = ":call fzf#install()" }
+    use { 'junegunn/fzf.vim' }
 
     -- deps
     use 'nvim-lua/plenary.nvim'
@@ -54,6 +56,10 @@ return packer.startup(
     use 'amadeus/vim-xml'
 
     -- OTHER
+
+    use {
+      "shortcuts/no-neck-pain.nvim",
+    }
 
     use "McAuleyPenney/tidy.nvim"
 
@@ -110,6 +116,9 @@ return packer.startup(
     -- some `lsp` configs
 
     use 'jose-elias-alvarez/null-ls.nvim'
+
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
 
     use {
       'neovim/nvim-lspconfig',
