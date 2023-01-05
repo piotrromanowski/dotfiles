@@ -112,10 +112,36 @@ nvim_lsp["tsserver"].setup({
 --})
 local null_ls = require('null-ls')
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+
+local h = require("null-ls.helpers")
+local methods = require("null-ls.methods")
+
+local FORMATTING = methods.internal.FORMATTING
+
+local jsonnetfmt = h.make_builtin({
+    name = "jsonnetfmt",
+    meta = {
+        url = "",
+        description = "",
+        notes = {
+            "",
+        },
+    },
+    method = FORMATTING,
+    filetypes = { "jsonnet" },
+    generator_opts = {
+        command = "jsonnetfmt",
+        to_stdin = true,
+    },
+    factory = h.formatter_factory,
+})
+
+
 null_ls.setup({
     sources = {
         null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.rustfmt,
+        jsonnetfmt,
         --require("null-ls").builtins.formatting.stylua,
         --require("null-ls").builtins.completion.spell,
     },
