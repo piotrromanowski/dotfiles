@@ -33,7 +33,7 @@ async = vim.loop.new_async(
   )
 )
 
-require('plugins.noneckpain')
+--require('plugins.noneckpain')
 require('plugins.mason')
 
 async:send()

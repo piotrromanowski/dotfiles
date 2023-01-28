@@ -118,7 +118,7 @@ return packer.startup(
     use 'jose-elias-alvarez/null-ls.nvim'
 
     use 'williamboman/mason.nvim'
-    use 'williamboman/mason-lspconfig.nvim'
+		use 'williamboman/mason-lspconfig.nvim'
 
     use {
       'neovim/nvim-lspconfig',
@@ -206,6 +206,7 @@ return packer.startup(
 
     -- display function signatures while typing
     use 'ray-x/lsp_signature.nvim'
+    use 'tjdevries/colorbuddy.vim'
 
     -- COLORSCHEMES
     use {
@@ -214,8 +215,6 @@ return packer.startup(
         require "theme"
       end
     }
-
-    use 'tjdevries/colorbuddy.vim'
     use 'tjdevries/gruvbuddy.nvim'
     use 'norcalli/nvim-colorizer.lua'
   end
