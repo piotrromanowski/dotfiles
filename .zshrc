@@ -93,6 +93,7 @@ export FZF_DEFAULT_OPTS='--preview-window right:60%:wrap --bind ctrl-/:toggle-pr
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias clip="xclip -selection clipboard -i"
 
 
 ### ---------------------------------------------------------------------------------------------------------------------
