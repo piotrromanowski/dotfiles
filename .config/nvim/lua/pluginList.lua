@@ -82,6 +82,18 @@ return packer.startup(
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
     }
 
+    use {
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim",
+      config = function()
+        require("todo-comments").setup {
+          -- your configuration comes here
+          -- or leave it empty to use the default settings
+          -- refer to the configuration section below
+        }
+      end
+    }
+
     -- line 'em up
     --use 'godlygeek/tabular'
 
@@ -119,16 +131,20 @@ return packer.startup(
 
     use 'williamboman/mason.nvim'
 		use 'williamboman/mason-lspconfig.nvim'
+    use 'williamboman/nvim-lsp-installer'
+    use 'folke/neodev.nvim'
 
     use {
       'neovim/nvim-lspconfig',
-      requires = {'williamboman/nvim-lsp-installer'},
+      requires = {
+        'williamboman/nvim-lsp-installer',
+        'folke/neodev.nvim',
+      },
       config = function()
         require('plugins.lspconfig')
       end
     }
 
-    use 'williamboman/nvim-lsp-installer'
 
     --use {
     --  'glepnir/lspsaga.nvim',
@@ -142,6 +158,7 @@ return packer.startup(
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-nvim-lua'
+    use 'hrsh7th/cmp-nvim-lsp-signature-help'
     use {
       'saadparwaiz1/cmp_luasnip',
     }
@@ -206,6 +223,7 @@ return packer.startup(
 
     -- display function signatures while typing
     use 'ray-x/lsp_signature.nvim'
+
     use 'tjdevries/colorbuddy.vim'
 
     -- COLORSCHEMES

@@ -1,7 +1,7 @@
 
 vim.opt.termguicolors = true
 
-require("colorbuddy").colorscheme "gruvbuddy"
+local gruvBuddy = require("colorbuddy").colorscheme "gruvbuddy"
 require("colorizer").setup()
 
 local c = require("colorbuddy.color").colors

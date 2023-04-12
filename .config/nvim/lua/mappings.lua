@@ -33,6 +33,8 @@ map('n', '<C-p>', "<cmd>Telescope git_files<cr>", {})
 --map('n', ';', ':Buffers<cr>', {})
 map('n', ';', ':Telescope buffers<cr>', {})
 
+map('n', '<leader>gl', '<cmd>lua require(\'telescope.builtin\').git_branches({show_remote_tracking_branches = false})<cr>', {})
+
 
 -- compe
 --map('i', '<C-space>', 'compe#complete()', { expr = true })

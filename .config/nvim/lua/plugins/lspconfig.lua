@@ -141,6 +141,8 @@ null_ls.setup({
     sources = {
         null_ls.builtins.formatting.prettier,
         null_ls.builtins.formatting.rustfmt,
+        null_ls.builtins.formatting.yapf.with({ extra_args = { "--style=/home/promanowski/src/vistar/tools/pyfmt/.style.yapf" }}),
+        --null_ls.builtins.formatting.flake8,
         jsonnetfmt,
         --require("null-ls").builtins.formatting.stylua,
         --require("null-ls").builtins.completion.spell,
@@ -162,4 +164,6 @@ null_ls.setup({
     end,
 })
 
+-- Setup neovim lua configuration
+require('neodev').setup()
 

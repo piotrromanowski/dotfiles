@@ -94,3 +94,5 @@ local disabled_built_in_plugins = {
 for _, plugin in pairs(disabled_built_in_plugins) do
   vim.g["loaded_" .. plugin] = 1
 end
+
+vim.opt.fillchars:append { eob = " " }
