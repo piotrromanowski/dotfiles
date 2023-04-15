@@ -57,7 +57,7 @@ font-4 = "Material Icons Round:9;4"
 
 modules-left = xworkspaces
 modules-center = xwindow
-modules-right = filesystem pulseaudio memory cpu wlan date sysmenu
+modules-right = filesystem pulseaudio memory cpu wlan battery date sysmenu
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -71,6 +71,34 @@ tray-position = right
 wm-restack = i3
 
 ; override-redirect = true
+
+[module/battery]
+type = internal/battery
+
+; This is useful in case the battery never reports 100% charge
+; Default: 100
+full-at = 99
+
+; format-low once this charge percentage is reached
+; Default: 10
+; New in version 3.6.0
+low-at = 5
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = ADP1
+
+; If an inotify event haven't been reported in this many
+; seconds, manually poll for new values.
+;
+; Needed as a fallback for systems that don't report events
+; on sysfs/procfs.
+;
+; Disable polling by setting the interval to 0.
+;
+; Default: 5
+poll-interval = 5
 
 [module/xworkspaces]
 type = internal/xworkspaces
@@ -109,7 +137,7 @@ label-unmounted-foreground = ${colors.disabled}
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume-prefix = "󱘲 "
+format-volume-prefix = " "
 format-volume-prefix-foreground = ${colors.primary}
 format-volume = <label-volume>
 
